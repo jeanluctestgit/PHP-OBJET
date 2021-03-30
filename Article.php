@@ -18,44 +18,44 @@ class Article {
         }
     }
 
-    public setTitre($titre){
+    public function setTitre($titre){
         $this->titre = $titre;
     }
 
-    public setAuteur($auteur){
+    public function setAuteur($auteur){
         $this->auteur = $auteur;
     }
 
-    public setDate($date){
+    public function setDate($date){
         $this->date = $date;
     }
 
-    public setImage($image){
+    public function setImage($image){
         $this->image = $image;
     }
 
-    public setMessage($message){
+    public function setMessage($message){
 
         $this->message = $message;
     }
 
-    public getTitre(){
+    public function getTitre(){
         return  $this->titre ;
     }
 
-    public getAuteur(){
+    public function getAuteur(){
         return  $this->auteur ;
     }
 
-    public getDate(){
+    public function getDate(){
         return $this->date ;
     }
 
-    public getImage(){
+    public function getImage(){
         return $this->image ;
     }
 
-    public getMessage(){
+    public function getMessage(){
 
        return $this->message ;
     }
