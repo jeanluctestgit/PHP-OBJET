@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpunit/php-timer": "^5.0",
+        "symfony/var-dumper": "^5.2"
+    }
+}

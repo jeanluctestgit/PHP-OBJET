@@ -60,9 +60,9 @@
     <div class="form-group col">
       <label for="image">Image</label>
       <select class="form-control" name="image" id="image" value = "<?= isset($_POST['image']) ? $_POST['image']: '' ?>">
-        <option value="JPEG" selected = "<?= isset($_POST['image']) && ($_POST['image']== 'JPEG')? 'selected':'' ?>">JPEG</option>
-        <option value="PNG" selected = "<?= isset($_POST['image']) && ($_POST['image']== 'PNG') ? 'selected':'' ?>" >PNG</option>
-        <option value="BMP" >BMP</option>
+        <option value="JPEG" <?php if(isset($_POST['image']) && ($_POST['image']== 'JPEG')) echo "selected"  ?>>JPEG</option>
+        <option value="PNG" <?php if(isset($_POST['image']) && ($_POST['image']== 'PNG')) echo "selected"  ?> >PNG</option>
+        <option value="BMP" <?php if(isset($_POST['image']) && ($_POST['image']== 'BMP')) echo "selected"  ?>>BMP</option>
       </select>
     </div>
     </div>
