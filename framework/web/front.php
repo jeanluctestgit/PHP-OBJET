@@ -1,5 +1,10 @@
 <?php
 // example.com/web/front.php
+/*
+Header alwaysHeader always set Access-Control-Allow-Origin "*" set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+Header always set Access-Control-Allow-Headers "X-Requested-With, Content-Type"*/
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type, origin");
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
