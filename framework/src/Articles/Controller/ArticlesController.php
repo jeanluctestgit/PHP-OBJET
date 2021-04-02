@@ -22,9 +22,23 @@ class ArticlesController {
         
         /*$response->headers->set('Access-Control-Allow-Origin', '*');
         $response->headers->set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
-        $response->headers->set('Access-Control-Allow-Headers', 'AccountKey,x-requested-with, Content-Type, origin, authorization, accept, client-security-token, host, date, cookie, cookie2');       
-        */
+        $response->headers->set('Access-Control-Allow-Headers', '*');   */   
+        
         $response->setContent(json_encode($mgt->getArticles()));
+        return $response;
+    }
+
+    public function getArticle(Request $request , $id){
+        $dba = new DBA();
+        $mgt = new ArticleManager($dba->getPDO());
+        //return new Response(require_once __DIR__.'/../Views/ArticleView.php');
+        $response = new Response();
+        
+        /*$response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+        $response->headers->set('Access-Control-Allow-Headers', '*');*/       
+        
+        $response->setContent(json_encode($mgt->getArticle($id)));
         return $response;
     }
 
@@ -36,9 +50,10 @@ class ArticlesController {
         //header('Location: /articles');
         //return new Response(require_once __DIR__.'/../Views/ArticleView.php');
         $response = new Response();
-        $response->headers->set('Access-Control-Allow-Origin', '*');
+        /*$response->headers->set('Access-Control-Allow-Origin', '*');
         $response->headers->set('Access-Control-Allow-Methods', 'DELETE');
         $response->headers->set('Access-Control-Allow-Headers', 'AccountKey,x-requested-with, Content-Type, origin, authorization, accept, client-security-token, host, date, cookie, cookie2');       
+        */
         $response->setContent(json_encode($mgt->getArticles()));
         return $response;
     }

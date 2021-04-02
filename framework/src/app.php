@@ -16,6 +16,11 @@ $routes->add('articles', new Routing\Route('/articles', [
     '_controller' => '\Articles\Controller\ArticlesController::index',
 ], [], [], '', [], ['GET']));
 
+$routes->add('get_article', new Routing\Route('/articles/{id}', [
+    'id' => null,
+    '_controller' => '\Articles\Controller\ArticlesController::getArticle',
+], [], [], '', [], ['GET']));
+
 $routes->add('delete_article', new Routing\Route('/articles/{id}', [
     'id' => null,
     '_controller' => '\Articles\Controller\ArticlesController::delete',
