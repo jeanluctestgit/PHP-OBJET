@@ -14,6 +14,7 @@ export default class Articles extends Component {
       date: "",
       image: "",
       message: "",
+      id : 0
     };
     this.handleTitreChange = this.handleTitreChange.bind(this);
     this.handleAuteurChange = this.handleAuteurChange.bind(this);
@@ -49,6 +50,7 @@ export default class Articles extends Component {
       console.log(res.data);
       const article = res.data;
       this.setState({
+        id : article.id,
         titre: article.titre,
         auteur: article.auteur,
         date: article.date,
@@ -63,8 +65,7 @@ export default class Articles extends Component {
   }
 
   updateArticle(e, id) {
-    alert('toto');
-    e.preventDefault();
+   
     
     const article = {};
     let frmData = new FormData(document.querySelector("#article"));
@@ -75,8 +76,8 @@ export default class Articles extends Component {
     article.message = frmData.get("message");
     axios.put("http://127.0.0.1:4321/articles/" + id , article).then((res) => {
       console.log(res.data);
-      const article = res.data;
-      this.setState({ currentArticle: article });
+      const articles = res.data;
+      this.setState({ articles: articles });
     });
     
   }
@@ -157,14 +158,12 @@ export default class Articles extends Component {
                 <div className="form-group col">
                   <label for="id"></label>
                   <input
-                    type="hidden"
+                    type="text"
                     class="form-control"
                     name="id"
                     id="id"
                     value={
-                      this.state.currentArticle
-                        ? this.state.currentArticle.id
-                        : ""
+                      this.state.id
                     }
                   />
                 </div>
@@ -236,7 +235,7 @@ export default class Articles extends Component {
                       : (e) =>
                           {
                               alert('update ')
-                              this.updateArticle(e, this.state.currentArticle.id)
+                              this.updateArticle(e, this.state.id)
                           }
                   }
                 >
