@@ -135,6 +135,7 @@ export default class Articles extends Component {
   }
 
   render() {
+    console.log(this.state.articles)
     return (
       <div className="container">
         <div className="card mb-3">
@@ -249,7 +250,9 @@ export default class Articles extends Component {
           <div className="card-header">Liste des articles</div>
           <div className="card-body">
             <ul className="list-group">
-              {this.state.articles.map((a) => {
+              {
+                this.state.articles.length > 0 ?
+                this.state.articles.map((a) => {
                 return (
                   <li className="list-group-item">
                     <span className="float-left" style={{ textAlign: "left" }}>
@@ -274,7 +277,9 @@ export default class Articles extends Component {
                     </span>
                   </li>
                 );
-              })}
+              }): 
+              <li className="list-group-item">Pas d'articles</li>
+              }
             </ul>
           </div>
         </div>

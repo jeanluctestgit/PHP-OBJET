@@ -1,11 +1,11 @@
 <?php
 namespace Articles\Model;
 class ArticleManager {
-    private \PDO $_db;
-    public function __construct(\PDO $db) {
+    private  $_db;
+    public function __construct( $db) {
         $this->setDb($db);
     }
-    public function setDb(\PDO $db) {
+    public function setDb( $db) {
         $this->_db = $db;
     }
 

@@ -1,11 +1,11 @@
 <?php
 namespace Articles\Model;
 class Article {
-    private string $titre;
-    private string $auteur;
-    private string $date;
-    private string $image;
-    private string $message;
+    private  $titre;
+    private  $auteur;
+    private  $date;
+    private  $image;
+    private  $message;
 
     public function __construct() {
     //$this->hydrate($data);

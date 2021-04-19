@@ -3,7 +3,7 @@ namespace Services;
 
 class DBA
 {
-private ?\PDO $PDOInstance = null;
+private $PDOInstance = null;
 const DEFAULT_SQL_USER = 'root';
 const DEFAULT_SQL_HOST = 'localhost';
 const DEFAULT_SQL_PASS = '';
